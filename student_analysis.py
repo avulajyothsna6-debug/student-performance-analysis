@@ -1,20 +1,24 @@
-students = [
-    {"name": "Ravi", "marks": 85},
-    {"name": "Sita", "marks": 92},
-    {"name": "Raju", "marks": 67},
-    {"name": "Priya", "marks": 78},
-    {"name": "Anu", "marks": 95}
-]
+```python
+import csv
 
-total = 0
+students = []
+
+with open("students.csv", "r") as file:
+    reader = csv.DictReader(file)
+
+    for row in reader:
+        row["Marks"] = int(row["Marks"])
+        row["Attendance"] = int(row["Attendance"])
+        students.append(row)
 
 print("STUDENT PERFORMANCE ANALYSIS")
 print("----------------------------")
 
+total_marks = 0
+
 for student in students:
-    name = student["name"]
-    marks = student["marks"]
-    total += marks
+    marks = student["Marks"]
+    total_marks += marks
 
     if marks >= 90:
         grade = "A"
@@ -25,15 +29,16 @@ for student in students:
     else:
         grade = "D"
 
-    print("Name:", name)
+    print("Name:", student["Name"])
     print("Marks:", marks)
+    print("Attendance:", student["Attendance"], "%")
     print("Grade:", grade)
     print("----------------------------")
 
-average = total / len(students)
-topper = max(students, key=lambda s: s["marks"])
+average = total_marks / len(students)
+topper = max(students, key=lambda s: s["Marks"])
 
 print("Total Students:", len(students))
 print("Average Marks:", round(average, 2))
-print("Topper:", topper["name"])
-print("Highest Marks:", topper["marks"])
+print("Topper:", topper["Name"])
+print("Highest Marks:", topper["Marks"])
