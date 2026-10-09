@@ -1,26 +1,6 @@
-STUDENT PERFORMANCE ANALYSIS
-----------------------------
-Name: Ravi
-Marks: 85
-Grade: B
---------------------
-Name: Sita
-Marks: 92
-Grade: A
---------------------
-Name: Raju
-Marks: 67
-Grade: C
---------------------
-Name: Priya
-Marks: 78
-Grade: B
---------------------
-Name: Anu
-Marks: 95
-Grade: A
---------------------
-Total Students: 5
-Average Marks: 83.4
-Topper: Anu
-Highest Marks: 95
+Name,Marks,Attendance
+Ravi,85,90
+Sita,92,95
+Raju,67,70
+Priya,78,85
+Anu,95,98
